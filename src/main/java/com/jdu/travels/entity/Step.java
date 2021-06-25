@@ -31,4 +31,48 @@ public class Step {
     private String description;
     
     private ArrayList<String> links;
+
+    public Step() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long aId) {
+        id = aId;
+    }
+
+    public Destination getDestination() {
+        return destination;
+    }
+
+    public void setDestination(Destination aDestination) {
+        destination = aDestination;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate aDate) {
+        date = aDate;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String aDescription) {
+        description = aDescription;
+    }
+
+    public ArrayList<String> getLinks() {
+        return links;
+    }
+
+    public void setLinks(ArrayList<String> aLinks) {
+        links = aLinks;
+    }
+    
 }

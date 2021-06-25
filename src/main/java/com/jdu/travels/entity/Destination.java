@@ -24,4 +24,39 @@ public class Destination {
     
     private LocalDate endDate;
 
+    public Destination() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long aId) {
+        id = aId;
+    }
+
+    public List<Step> getSteps() {
+        return steps;
+    }
+
+    public void setSteps(List<Step> aSteps) {
+        steps = aSteps;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDate aStartDate) {
+        startDate = aStartDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDate aEndDate) {
+        endDate = aEndDate;
+    }
+
 }
