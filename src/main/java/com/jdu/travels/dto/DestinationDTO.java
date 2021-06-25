@@ -1,52 +1,33 @@
-package com.jdu.travels.entity;
+package com.jdu.travels.dto;
 
 import java.time.LocalDate;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import com.jdu.travels.entity.Step;
 
-@Entity
-public class Destination {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+public class DestinationDTO {
     private Long id;
-    
-    @OneToMany(mappedBy = "destination", cascade = CascadeType.ALL)
+    private String country;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private List<Step> steps;
     
-    @Column(nullable=false)
-    private String country;
-    
-    private LocalDate startDate;
-    
-    private LocalDate endDate;
-    
-    public Destination() {
+    public DestinationDTO(Long aId, String country, LocalDate aStartDate, LocalDate aEndDate, List<Step> aSteps) {
+        id = aId;
+        this.country = country;
+        startDate = aStartDate;
+        endDate = aEndDate;
+        steps = aSteps;
     }
-
+    
     public Long getId() {
         return id;
     }
-
     public void setId(Long aId) {
         id = aId;
     }
-
-    public List<Step> getSteps() {
-        return steps;
-    }
-
-    public void setSteps(List<Step> aSteps) {
-        steps = aSteps;
-    }
-
+    
     public String getCountry() {
         return country;
     }
@@ -58,17 +39,19 @@ public class Destination {
     public LocalDate getStartDate() {
         return startDate;
     }
-
     public void setStartDate(LocalDate aStartDate) {
         startDate = aStartDate;
     }
-
     public LocalDate getEndDate() {
         return endDate;
     }
-
     public void setEndDate(LocalDate aEndDate) {
         endDate = aEndDate;
     }
-
+    public List<Step> getSteps() {
+        return steps;
+    }
+    public void setSteps(List<Step> aSteps) {
+        steps = aSteps;
+    }
 }
